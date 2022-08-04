@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show, Hide and Animate Controls using jQuery and CSS</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <style>
+        #divAnim {
+            font:15px Verdana; 
+            background-color:rgb(255, 255, 255); 
+            position:relative; 
+            width:80px; 
+            height:27px; 
+            padding:5px; 
+            border:solid 1px rgb(252, 255, 204); border-radius:2px; 
+            -moz-border-radius:2px; -webkit-border-radius:2px;
+        }
+        #divAnim label {
+            width:100%; 
+            color:#009872; 
+            font-size:14px; 
+            padding:10px; 
+        }
+        #divAnim input {
+            padding:3px 2px; 
+            border:solid 1px #3079ED; 
+            border-radius:2px; 
+            -moz-border-radius:2px; -webkit-border-radius:2px; 
+            background:#6D9BF1; 
+            color:rgb(243, 34, 34); 
+            cursor:pointer;
+        }
+        #divAnim div {
+            display:none; 
+            padding:20px 10px;
+        }
+        #divAnim li {
+            margin:0 2px 0 0;
+            display:inline;
+            font-size:0.7em;
+            font-style:normal;
+            padding:2px 0 2px 2px;
+            vertical-align:middle;
+        }
+    </style>
+</head>
+<body>
+    <div id="divAnim">
+        <input type="button" id="btAnimate" value="tap to see magic" />
+        <div id="divC">
+            <ul>
+                <li><label>khane ka pine ka or maja ni life jine ka</label></li>
+            </ul>
+            <ul>
+                <li><label>tension kaiko leta he re bhidu</label></li>
+                <li style="float:right">
+                    <input type="button" id="btHide" value="gayab karne k liye tap karo" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#btAnimate').click(function () {
+            // Animate the div element. A duration is set to 500 milliseconds.
+            $("#divAnim").animate({ width: '500px', height: '120px' }, 500);
+            $('#divC').show();          // Also show the div element.
+        });
+
+        // REVERSE ANIMATE.
+        $('#btHide').click(function () {
+            $("#divAnim").animate({ width: '80px', height: '27px' }, 500);
+            $('#divC').hide('slow');          // HIDE THE DIV.
+        });
+    });
+</script>
+</html>
