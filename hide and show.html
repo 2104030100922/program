@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css" >
+        #d1{background-color:lightgreen; height:200px;
+          width:200px;
+          border:3px solid #282828;
+          border-radius: 10px;}
+          h1{
+            padding-left: 10px;
+            padding-right:10px;
+            padding-bottom:30px;
+            padding-top: 30px;;
+          }
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("div").hide(2000);
+    $("#hide").attr("disabled",true);
+    $("#show").attr("disabled",false);
+     
+    
+});
+  $("#show").click(function(){
+    $("div").show(2000);
+    $("#adison").attr ("disabled",false);
+    $("#subtraction").attr("disable",true); 
+  });
+});
+</script>
+</head>
+<body>
+<div id="d1">
+    <h1> silver oak university</h1>
+
+</div>
+<br/>
+<br/>
+<button id="hide">hide</button>
+<button id="show">show</button>
+
+</body>
+</html>
